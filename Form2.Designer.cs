@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.listV_01 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -42,14 +43,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Extrato Bancário";
             // 
+            // listV_01
+            // 
+            this.listV_01.HideSelection = false;
+            this.listV_01.Location = new System.Drawing.Point(77, 116);
+            this.listV_01.Name = "listV_01";
+            this.listV_01.Size = new System.Drawing.Size(217, 174);
+            this.listV_01.TabIndex = 1;
+            this.listV_01.UseCompatibleStateImageBehavior = false;
+            this.listV_01.View = System.Windows.Forms.View.List;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 350);
+            this.Controls.Add(this.listV_01);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listV_01;
     }
 }

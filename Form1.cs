@@ -12,11 +12,12 @@ namespace Aula04AppBanco
 {
     public partial class Form1 : Form
     {
+       public List<string> Extratos = new List<string>();
         public Form1()
         {
             InitializeComponent();
         }
-
+        
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
             double Valor = Math.Abs(double.Parse(txt_ValorDigitado.Text));
@@ -27,6 +28,7 @@ namespace Aula04AppBanco
             {
                 saque = saldo - Valor;
                 lbl_Valor.Text = $"{saque}";
+                Extratos.Add($"Saque no valor de R${Valor} ");
                 
                 if(Valor > saldo) 
                 {
@@ -37,6 +39,7 @@ namespace Aula04AppBanco
             {
                 soma = saldo + Valor;
                 lbl_Valor.Text = $"{soma}";
+                Extratos.Add($"Deposito no valor de R${Valor}");
             }
             
 
@@ -60,12 +63,15 @@ namespace Aula04AppBanco
             btn_Sacar.BackColor = Color.Gainsboro;
             btn_Sacar.ForeColor = Color.Black;
             lbl_funcao.Text = "DEPÓSITO";
+            
         }
 
         private void Btn_Extrato_Click(object sender, EventArgs e)
         {
             Form2 tela_Extrato = new Form2();
+            tela_Extrato.extratos = Extratos;
             tela_Extrato.Show();
+
 
         }
     }
